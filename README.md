@@ -5,15 +5,19 @@
 | Column             | Type   | Options                   |
 | ------------------ | ------ | ------------------------- |
 | email              | string | null: false, unique: true |
-| password　　　　　　 | string | null: false               |
-| name               | string | null: false               |
-| pronounce_name     | string | null: false               |
+| encrypted_password | string | null: false               |
+| firstname          | string | null: false               |
+| lastname           | string | null: false               |
+| pronounce_firstname| string | null: false               |
+| pronounce_lastname | string | null: false               |
 | nickname           | string | null: false               |
 | birthday           | string | null: false               |
 
 ### Association
 - has_many :items
-- has_one  :buyer
+- has_many :purchased_items
+- has_many :buyers
+
 
 
 ## itemsテーブル
@@ -21,28 +25,39 @@
 | ------------------ | ------------ | ------------------------------ |
 | name               | string       | null: false                    |
 | explanat           | text         | null: false                    |
-| image              | image        | null: false                    |
-| price              | string       | null: false                    |
+| price              | integer      | null: false                    |
 | category           | string       | null: false                    |
-| status             | string       | null: false                    |
-| deriverycharge　　　| string       | null: false                    |
-| sender_area        | string       | null: false                    |
-| daystosend         | string       | null: false                    |
-| comment            | text         | null: false                    |
+| status_id          | integer      | null: false                    |
+| derivery_charge_id | integer      | null: false                    |
+| sender_area_id     | integer      | null: false                    |
+| daystosend_id      | integer      | null: false                    |
 | user               | references   | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
+- has_one    :purchased_items
 - has_one    :buyer
 
+
+## purchased_itemsテーブル
+| Column                  | Type         | Options                        |
+| ----------------------- | ------------ | ------------------------------ |
+| item                    | references   | null: false, foreign_key: true |
+| user                    | references   | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- belongs_to :item
+- has_one    :buyer
 
 ## buyersテーブル
 | Column                  | Type         | Options                        |
 | ----------------------- | ------------ | ------------------------------ |
-| card_number             | string       | null: false                    |
-| card_limit              | string       | null: false                    |
-| card_securitycode       | string       | null: false                    |
-| address                 | string       | null: false                    |
+| postal_code             | string       | null: false                    |
+| prefectures             | string       | null: false                    |
+| municipality            | string       | null: false                    |
+| house_number            | string       | null: false                    |
+| building_name           | string       |                                |
 | tell                    | string       | null: false                    |
 | item                    | references   | null: false, foreign_key: true |
 | user                    | references   | null: false, foreign_key: true |
@@ -50,3 +65,4 @@
 ### Association
 - belongs_to :user
 - belongs_to :item
+- belongs_to :purchased_items
