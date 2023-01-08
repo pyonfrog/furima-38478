@@ -25,7 +25,7 @@
 | name               | string       | null: false                    |
 | explanat           | text         | null: false                    |
 | price              | integer      | null: false                    |
-| category_id        | string       | null: false                    |
+| category_id        | integer      | null: false                    |
 | status_id          | integer      | null: false                    |
 | derivery_charge_id | integer      | null: false                    |
 | sender_area_id     | integer      | null: false                    |
@@ -34,7 +34,7 @@
 
 ### Association
 - belongs_to :user
-- has_one    :purchased_items
+- has_one    :purchased_item
 
 
 ## purchased_itemsテーブル
@@ -57,8 +57,7 @@
 | house_number            | string       | null: false                    |
 | building_name           | string       |                                |
 | tell                    | string       | null: false                    |
+| purchased_item          | references   | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :user
-- belongs_to :item
-- belongs_to :purchased_items
+- belongs_to :purchased_item
