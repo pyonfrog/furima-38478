@@ -11,12 +11,11 @@
 | pronounce_firstname| string | null: false               |
 | pronounce_lastname | string | null: false               |
 | nickname           | string | null: false               |
-| birthday           | string | null: false               |
+| birthday           | date   | null: false               |
 
 ### Association
 - has_many :items
 - has_many :purchased_items
-- has_many :buyers
 
 
 
@@ -26,7 +25,7 @@
 | name               | string       | null: false                    |
 | explanat           | text         | null: false                    |
 | price              | integer      | null: false                    |
-| category           | string       | null: false                    |
+| category_id        | string       | null: false                    |
 | status_id          | integer      | null: false                    |
 | derivery_charge_id | integer      | null: false                    |
 | sender_area_id     | integer      | null: false                    |
@@ -36,7 +35,6 @@
 ### Association
 - belongs_to :user
 - has_one    :purchased_items
-- has_one    :buyer
 
 
 ## purchased_itemsテーブル
@@ -54,13 +52,11 @@
 | Column                  | Type         | Options                        |
 | ----------------------- | ------------ | ------------------------------ |
 | postal_code             | string       | null: false                    |
-| prefectures             | string       | null: false                    |
+| sender_area_id          | string       | null: false                    |
 | municipality            | string       | null: false                    |
 | house_number            | string       | null: false                    |
 | building_name           | string       |                                |
 | tell                    | string       | null: false                    |
-| item                    | references   | null: false, foreign_key: true |
-| user                    | references   | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
