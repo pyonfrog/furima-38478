@@ -52,7 +52,7 @@
 | Column                  | Type         | Options                        |
 | ----------------------- | ------------ | ------------------------------ |
 | postal_code             | string       | null: false                    |
-| sender_area_id          | string       | null: false                    |
+| sender_area_id          | integer      | null: false                    |
 | municipality            | string       | null: false                    |
 | house_number            | string       | null: false                    |
 | building_name           | string       |                                |
