@@ -4,11 +4,11 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :category
-  belongs_to :status
-  belongs_to :derivery_charge
-  belongs_to :sender_area
-  belongs_to :daystosend
+  belongs_to_active_hash :category
+  belongs_to_active_hash :status
+  belongs_to_active_hash :derivery_charge
+  belongs_to_active_hash :sender_area
+  belongs_to_active_hash :daystosend
 
   validates :name,               :string,     presence: true
   validates :explanat,           :text,       presence: true
