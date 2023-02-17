@@ -10,14 +10,14 @@ class Item < ApplicationRecord
   belongs_to_active_hash :sender_area
   belongs_to_active_hash :daystosend
 
-  validates :name,               :string,     presence: true
-  validates :explanat,           :text,       presence: true
-  validates :price,              :integer,    presence: true, numericality: {greater_than: 300,less_than: 9999999}, format: { with: /\A[0-9]+\z/ }
-  validates :category_id,        :integer,    numericality: { other_than: 1 , message: "can't be blank" }
-  validates :status_id,          :integer,    numericality: { other_than: 1 , message: "can't be blank" }
-  validates :derivery_charge_id, :integer,    numericality: { other_than: 1 , message: "can't be blank" }
-  validates :sender_area_id,     :integer,    numericality: { other_than: 1 , message: "can't be blank" }
-  validates :daystosend_id,      :integer,    numericality: { other_than: 1 , message: "can't be blank" }
-  validates :user,               :references, presence: true, foreign_key: true
+  validates :image,              presence: true
+  validates :name,               presence: true
+  validates :explanat,           presence: true
+  validates :price,              presence: true, numericality: {greater_than: 300,less_than: 9999999}, format: { with: /\A[0-9]+\z/ }
+  validates :category_id,        numericality: { other_than: 1 , message: "can't be blank" }
+  validates :status_id,          numericality: { other_than: 1 , message: "can't be blank" }
+  validates :derivery_charge_id, numericality: { other_than: 1 , message: "can't be blank" }
+  validates :sender_area_id,     numericality: { other_than: 1 , message: "can't be blank" }
+  validates :daystosend_id,      numericality: { other_than: 1 , message: "can't be blank" }
 
 end
