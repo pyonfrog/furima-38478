@@ -11,6 +11,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :sender_area
   belongs_to_active_hash :daystosend
 
+  validates :user_id,            presence: true
   validates :image,              presence: true
   validates :name,               presence: true
   validates :explanat,           presence: true

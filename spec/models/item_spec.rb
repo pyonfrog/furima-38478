@@ -117,14 +117,20 @@ RSpec.describe Item, type: :model do
         price = "299"
         @item.price = price
         @item.valid?
-        expect(@item.errors.full_messages).to include('Price must be greater than 300')
+        expect(@item.errors.full_messages).to include('Price must be greater than or equal to 300')
       end
 
       it "priceが9999999以上では出品できない" do
         price = "10000000"
         @item.price = price
         @item.valid?
-        expect(@item.errors.full_messages).to include('Price must be less than 9999999')
+        expect(@item.errors.full_messages).to include('Price must be less than or equal to 9999999')
+      end
+
+      it "userが紐づいていないと出品できない" do
+        @item.user_id = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("User can't be blank")
       end
     end
   end
