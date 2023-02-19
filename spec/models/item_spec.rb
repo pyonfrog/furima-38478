@@ -56,13 +56,13 @@ RSpec.describe Item, type: :model do
       it "derivery_charge_idが存在しない場合は出品できない" do
         @item.derivery_charge_id = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Derivery_charge can't be blank")
+        expect(@item.errors.full_messages).to include("Derivery charge can't be blank")
       end
 
       it "sender_area_idが存在しない場合は出品できない" do
         @item.sender_area_id = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Sender_area can't be blank")
+        expect(@item.errors.full_messages).to include("Sender area can't be blank")
       end
 
       it "daystosend_idが存在しない場合は出品できない" do
