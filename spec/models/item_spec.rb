@@ -6,7 +6,7 @@ RSpec.describe Item, type: :model do
     @item = FactoryBot.build(:item)
   end
 
-  describe 'ユーザー新規登録' do
+  describe '商品登録' do
 
     context '商品出品できる時' do
 
@@ -41,32 +41,32 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
 
-      it "category_idが存在しない場合は出品できない" do
-        @item.category_id = nil
+      it "カテゴリーに「---」が選択されている場合は出品できない" do
+        @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Category can't be blank")
       end
 
-      it "status_idが存在しない場合は出品できない" do
-        @item.status_id = nil
+      it "商品の状態に「---」が選択されている場合は出品できない" do
+        @item.status_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Status can't be blank")
       end
 
-      it "derivery_charge_idが存在しない場合は出品できない" do
-        @item.derivery_charge_id = nil
+      it "配送料の負担に「---」が選択されている場合は出品できない" do
+        @item.derivery_charge_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Derivery charge can't be blank")
       end
 
-      it "sender_area_idが存在しない場合は出品できない" do
-        @item.sender_area_id = nil
+      it "発送元の地域に「---」が選択されている場合は出品できない" do
+        @item.sender_area_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Sender area can't be blank")
       end
 
-      it "daystosend_idが存在しない場合は出品できない" do
-        @item.daystosend_id = nil
+      it "発送までの日数に「---」が選択されている場合は出品できない" do
+        @item.daystosend_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Daystosend can't be blank")
       end
