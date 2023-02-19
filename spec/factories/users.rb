@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :user do
+    id                    {'1'}
     nickname              {'test'}
     email                 {'test@example'}
     password              {'000aaa'}
@@ -9,5 +10,8 @@ FactoryBot.define do
     pronounce_lastname    {'シケン'}
     pronounce_firstname   {'タロウ'}
     birthday              {'1930-01-01'}
+    created_at            {'2023-01-31 12:41:33.109162'}
+    updated_at            {'2023-01-31 12:41:33.109162'}
+
   end
 end
