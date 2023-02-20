@@ -244,7 +244,7 @@ a {
   justify-content: center;
 }
 
-.item-lists>.list {
+.list {
   width: 37vh;
   padding: 1vw;
   background-color: #FFF;
@@ -255,6 +255,7 @@ a {
 
 .item-img-content {
   position: relative;
+  padding: 10px;
 }
 
 .item-img {
@@ -265,7 +266,7 @@ a {
 .sold-out {
   position: absolute;
   top: 40%;
-  width: 100%;
+  width: 94.3%;
   text-align: center;
   background-color: crimson;
   transform: skewY(-10deg);
@@ -281,7 +282,7 @@ a {
 .item-info {
   background-color: #FFF;
   color: black;
-  padding: 1vw;
+  padding: 10px;
 }
 
 .item-name {
