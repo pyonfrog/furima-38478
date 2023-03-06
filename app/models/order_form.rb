@@ -3,6 +3,7 @@ class OrderForm
   attr_accessor :user_id, :item_id, :postal_code, :sender_area_id, :municipality, :house_number, :building_name, :tell, :token
 
     # purchased_itemモデルのバリデーション
+    validates :user_id, presence: true
     validates :item_id, presence: true
     # buyerモデルのバリデーション
     validates :postal_code,    presence: true, format: { with: /\A[0-9]{3}-[0-9]{4}\z/ }
