@@ -11,7 +11,7 @@ class OrderForm
     validates :municipality,   presence: true
     validates :house_number,   presence: true
     validate  :building_name
-    validates :tell,           presence: true, format: { with: /\A[0-9]{11}\z/ }
+    validates :tell,           presence: true, format: { with: /\A[0-9]{10,11}\z/ }
     #トークンのバリデーション
     validates :token, presence: true
 

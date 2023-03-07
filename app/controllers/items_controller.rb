@@ -26,7 +26,7 @@ def edit
   unless current_user.id == @item.user_id
     redirect_to root_path
   end
-  if current_user.id == @item.user_id && @item.purchased_item != nil
+  if @item.purchased_item != nil
     redirect_to root_path
   end
 end

@@ -4,10 +4,7 @@ class  OrdersController < ApplicationController
 
   def index
     @order_form = OrderForm.new
-    unless user_signed_in?
-      redirect_to user_session_path
-    end
-    if current_user.id == @item.user_id || @item.purchased_item != nil
+    if @item.purchased_item != nil
       redirect_to root_path
     end
   end
