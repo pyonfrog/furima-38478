@@ -1,10 +1,11 @@
 class Item < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+
   belongs_to       :user
-  # 購入機能で記述
-  # has_one          :purchased_item
+  has_one          :purchased_item
   has_one_attached :image
 
-  extend ActiveHash::Associations::ActiveRecordExtensions
+  
   belongs_to_active_hash :category
   belongs_to_active_hash :status
   belongs_to_active_hash :derivery_charge
