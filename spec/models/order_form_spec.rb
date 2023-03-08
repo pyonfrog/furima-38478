@@ -46,7 +46,7 @@ RSpec.describe OrderForm, type: :model do
       end
      
       it '都道府県が「---」だと保存できない' do
-        @order_form.sender_area_id = 0
+        @order_form.sender_area_id = 1
         @order_form.valid?
         expect(@order_form.errors.full_messages).to include("Sender area must be other than 0")
       end
