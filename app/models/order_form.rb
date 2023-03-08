@@ -20,3 +20,4 @@ class OrderForm
     Buyer.create( purchased_item: purchased_item, postal_code: postal_code, sender_area_id: sender_area_id, municipality: municipality, house_number: house_number, building_name: building_name, tell: tell)
   end
 end
+
